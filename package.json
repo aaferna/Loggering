@@ -1,5 +1,5 @@
 {
-  "name": "logger",
+  "name": "loggering",
   "version": "1.0.0",
   "description": "Registra tus logs de forma organizada",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gusgeek/Logger.git"
+    "url": "git+https://github.com/gusgeek/Loggering.git"
   },
   "keywords": [
     "log",
@@ -19,9 +19,9 @@
   "author": "gusgeek",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gusgeek/Logger/issues"
+    "url": "https://github.com/gusgeek/Loggering/issues"
   },
-  "homepage": "https://github.com/gusgeek/Logger#readme",
+  "homepage": "https://github.com/gusgeek/Loggering#readme",
   "dependencies": {
     "fs": "0.0.1-security"
   }
