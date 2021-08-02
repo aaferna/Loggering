@@ -29,3 +29,13 @@ El archivo se organizara por la hora en que se crea el registro. En este ejemplo
 ```json
     0:26:44 > {"msg":"Data is Saved"}
 ```
+<p align="center">
+  <br>
+  <bR>
+    <img src="https://img.shields.io/github/downloads/gusgeek/Loggering/total">  
+    <img src="https://img.shields.io/github/v/release/gusgeek/Loggering">  
+    <img src="https://img.shields.io/github/release-date/gusgeek/Loggering">  
+    <img src="https://img.shields.io/github/languages/code-size/gusgeek/Loggering">
+  <br><br>
+  <strong>:pencil2: con :heart:</strong>
+</p>
