@@ -1,0 +1,28 @@
+{
+  "name": "logger",
+  "version": "1.0.0",
+  "description": "Registra tus logs de forma organizada",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusgeek/Logger.git"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "registre",
+    "json"
+  ],
+  "author": "gusgeek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gusgeek/Logger/issues"
+  },
+  "homepage": "https://github.com/gusgeek/Logger#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
