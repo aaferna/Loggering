@@ -1,10 +1,10 @@
 {
   "name": "loggering",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "Registra tus logs de forma organizada",
-  "main": "index.js",
+  "main": "logger.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node logger.js"
   },
   "repository": {
     "type": "git",

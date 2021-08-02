@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-exports.logger = (directory, app, data) => {
+exports.loggering = (directory, app, data) => {
 
     const hoy = new Date();
     const today = hoy.toISOString().slice(0, 10);
