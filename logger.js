@@ -5,10 +5,13 @@ exports.loggering = (directory, app, data, timer = true) => {
     const hoy = new Date();
     const today = hoy.toISOString().slice(0, 10);
     const time = hoy.getHours()+':'+hoy.getMinutes()+':'+hoy.getSeconds();
+    
+    let dataf
+
     if (timer == true){
-        let dataf = time+' > '+data+"\n";
+        dataf = time+' > '+data+"\n";
     } else {
-        let dataf = data+"\n";
+        dataf = data+"\n";
     }
 
     if (!fs.existsSync(directory)) {

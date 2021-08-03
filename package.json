@@ -1,6 +1,6 @@
 {
   "name": "loggering",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Registra tus logs de forma organizada",
   "main": "logger.js",
   "scripts": {
