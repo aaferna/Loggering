@@ -1,11 +1,15 @@
 const fs = require('fs');
 
-exports.loggering = (directory, app, data) => {
+exports.loggering = (directory, app, data, timer = true) => {
 
     const hoy = new Date();
     const today = hoy.toISOString().slice(0, 10);
     const time = hoy.getHours()+':'+hoy.getMinutes()+':'+hoy.getSeconds();
-    let dataf = time+' > '+data+"\n";
+    if (timer == true){
+        let dataf = time+' > '+data+"\n";
+    } else {
+        let dataf = data+"\n";
+    }
 
     if (!fs.existsSync(directory)) {
         fs.mkdirSync(directory)

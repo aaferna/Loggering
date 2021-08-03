@@ -29,6 +29,22 @@ El archivo se organizara por la hora en que se crea el registro. En este ejemplo
 ```json
     0:26:44 > {"msg":"Data is Saved"}
 ```
+
+podra almacenar la informacion sin el Timer, simplemente indicandolo en la funcion
+
+```js
+
+    const c = require("loggering")
+    c.loggering('./','Test', JSON.stringify({"msg" :"Data is Saved"}), false)
+
+```
+
+quedando de la siguiente forma 
+
+```json
+    {"msg":"Data is Saved"}
+```
+
 <p align="center">
   <br>
   <bR>
