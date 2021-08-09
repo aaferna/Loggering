@@ -6,17 +6,7 @@ exports.loggering = (directory, app, data, timer = true) => {
     const today = hoy.toISOString().slice(0, 10);
     const time = hoy.getHours()+':'+hoy.getMinutes()+':'+hoy.getSeconds();
     
-    let dataf
-
-    if (timer == true){
-        dataf = time+' > '+data+"\n";
-    } else {
-        dataf = data+"\n";
-    }
-
-    if (!fs.existsSync(directory)) {
-        fs.mkdirSync(directory)
-    } else {
+    const toFile = (directory, app, today, dataf) => {
 
         fs.access(directory+app+"-"+today+".log", fs.F_OK, (err) => {
             if (err) {
@@ -29,9 +19,23 @@ exports.loggering = (directory, app, data, timer = true) => {
                 });
             }
         })
-
         return dataf
     }
+
+    let dataf
+
+    if (timer == true){
+        dataf = time+' > '+data+"\n";
+    } else {
+        dataf = data+"\n";
+    }
+
+
+    if (!fs.existsSync(directory)) {
+        fs.mkdirSync(directory)
+    } 
+    
+    toFile(directory, app, today, dataf) 
     
 }
 
