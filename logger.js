@@ -1,41 +1,29 @@
-const fs = require('fs');
+const solar = require("solardb-core")
+const { DateTime } = require("luxon");
 
-exports.loggering = (directory, app, data, timer = true) => {
+exports.loggering = (app, data, directory = null) => {
 
-    const hoy = new Date();
-    const today = hoy.toISOString().slice(0, 10);
-    const time = hoy.getHours()+':'+hoy.getMinutes()+':'+hoy.getSeconds();
+    let r = solar.dbCreateCollection (app, directory)
+    let idLog = 0
+    let now = DateTime.local().c
     
-    const toFile = (directory, app, today, dataf) => {
-
-        fs.access(directory+app+"-"+today+".log", fs.F_OK, (err) => {
-            if (err) {
-                fs.writeFile(directory+app+"-"+today+".log", dataf, function(err) {
-                    if(err) return err;
-                });
-            } else {
-                fs.appendFile(directory+app+"-"+today+".log", dataf, function (err) {
-                    if (err) return err;
-                });
-            }
-        })
-        return dataf
+    let postSave = {
+        date: now,
+        data: data
     }
 
-    let dataf
-
-    if (timer == true){
-        dataf = time+' > '+data+"\n";
-    } else {
-        dataf = data+"\n";
-    }
-
-
-    if (!fs.existsSync(directory)) {
-        fs.mkdirSync(directory)
-    } 
+    let id = parseInt(solar.dbGetLatestFile(app))
     
-    toFile(directory, app, today, dataf) 
+        if(id != 0){
+            let r = solar.dbGetData(id, app).pop()
+            if(r.code !== "ENOENT" && now.day == r.date.day){ idLog = id }
+        }
+            
+        if(idLog != 0){ 
+            solar.dbUpdate(postSave, idLog, app) 
+        } else {
+            idLog = solar.dbInsert(postSave, app).id
+        }
     
 }
 

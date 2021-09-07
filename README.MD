@@ -10,7 +10,7 @@ Indicando directorio, nombre de la aplicacion y el dato que usted quiere almacen
 
 ```js
 
-    loggering(directory, app, data)
+    loggering(app, data, directory)
 
 ```
 
@@ -18,32 +18,29 @@ Por ejemplo
 
 ```js
 
-    const c = require("loggering")
-    c.loggering('./','Test', JSON.stringify({"msg" :"Data is Saved"}))
+    const c = require("./logger.js")
+    c.loggering('Demo', "Data is Saved", './data/')
 
 ```
 
-Este creara un archivo .log ordenado por Nombre de App - Dia de creacion : Test-2021-08-02.log
-El archivo se organizara por la hora en que se crea el registro. En este ejemplo se guarda como un JSON Stringfy, pero puede almacenar un String crudo.
+Este creara un archivo .sol en el directorio indicado, usando el ejemplo anterior seria ./data/Demo
+El archivo se organizara por la hora en que se crea el registro. En este ejemplo se guarda como un String, pero puede almacenar un JSON Stringfy.
 
 ```json
-    0:26:44 > {"msg":"Data is Saved"}
+    {
+        "date": {
+            "year": 2021,
+            "month": 9,
+            "day": 6,
+            "hour": 22,
+            "minute": 55,
+            "second": 17,
+            "millisecond": 8
+        },
+        "data": "Data is Saved"
+    }
 ```
 
-podra almacenar la informacion sin el Timer, simplemente indicandolo en la funcion
-
-```js
-
-    const c = require("loggering")
-    c.loggering('./','Test', JSON.stringify({"msg" :"Data is Saved"}), false)
-
-```
-
-quedando de la siguiente forma 
-
-```json
-    {"msg":"Data is Saved"}
-```
 
 <p align="center">
   <br>
