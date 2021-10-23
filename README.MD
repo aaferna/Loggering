@@ -49,6 +49,9 @@ El archivo se organizara por la hora en que se crea el registro. En este ejemplo
     <img src="https://img.shields.io/github/v/release/gusgeek/Loggering">  
     <img src="https://img.shields.io/github/release-date/gusgeek/Loggering">  
     <img src="https://img.shields.io/github/languages/code-size/gusgeek/Loggering">
+    <img src="https://img.shields.io/npm/dt/Loggering?label=NPM%20Downloads">
+      
+      
   <br><br>
   <strong>:pencil2: con :heart:</strong>
 </p>
