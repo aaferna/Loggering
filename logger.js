@@ -13,17 +13,17 @@ exports.loggering = (app, data, directory = "./data/") => {
         data: data
     }
 
-    let id = parseInt(dbGetLatestFile(app))
+    let id = parseInt(dbGetLatestFile(app, directory))
     
         if(id != 0){
-            let r = dbGetData(id, app).pop()
+            let r = dbGetData(id, app, directory).pop()
             if(r.code !== "ENOENT" && now.day == r.date.day){ idLog = id }
         }
             
         if(idLog != 0){ 
-            dbUpdate(postSave, idLog, app) 
+            dbUpdate(postSave, idLog, app, directory) 
         } else {
-            idLog = dbInsert(postSave, app).id
+            idLog = dbInsert(postSave, app, directory).id
         }
     
 }
