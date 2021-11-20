@@ -18,26 +18,27 @@ Por ejemplo
 
 ```js
 
-    const c = require("./logger.js")
-    c.loggering('Demo', "Data is Saved", './data/')
+    const { loggering } = require('loggering')
+    loggering('Demo', "Data is Saved", './data/')
 
 ```
 
-Este creara un archivo .sol en el directorio indicado, usando el ejemplo anterior seria ./data/Demo
+Este creara un archivo .log en el directorio indicado, usando el ejemplo anterior seria ./data/Demo
 El archivo se organizara por la hora en que se crea el registro. En este ejemplo se guarda como un String, pero puede almacenar un JSON Stringfy.
 
 ```json
     {
-        "date": {
-            "year": 2021,
-            "month": 9,
-            "day": 6,
-            "hour": 22,
-            "minute": 55,
-            "second": 17,
-            "millisecond": 8
-        },
-        "data": "Data is Saved"
+    "app": "a",
+    "date": {
+        "year": 2021,
+        "month": 11,
+        "day": 20,
+        "hour": 7,
+        "minute": 26,
+        "second": 55,
+        "millisecond": 396
+    },
+    "data": "b"
     }
 ```
 

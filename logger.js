@@ -1,28 +1,29 @@
-const solar = require("solardb-core")
-const { DateTime } = require("luxon");
+const { DateTime } = require("luxon"),
+    { dbCreateCollection, dbInsert, dbUpdate, dbGetLatestFile, dbGetData } = require('./modules/mdw')
 
-exports.loggering = (app, data, directory = null) => {
+exports.loggering = (app, data, directory = "./data/") => {
 
-    let r = solar.dbCreateCollection (app, directory)
+    let r = dbCreateCollection (app, directory)
     let idLog = 0
     let now = DateTime.local().c
     
     let postSave = {
+        app: app,
         date: now,
         data: data
     }
 
-    let id = parseInt(solar.dbGetLatestFile(app))
+    let id = parseInt(dbGetLatestFile(app))
     
         if(id != 0){
-            let r = solar.dbGetData(id, app).pop()
+            let r = dbGetData(id, app).pop()
             if(r.code !== "ENOENT" && now.day == r.date.day){ idLog = id }
         }
             
         if(idLog != 0){ 
-            solar.dbUpdate(postSave, idLog, app) 
+            dbUpdate(postSave, idLog, app) 
         } else {
-            idLog = solar.dbInsert(postSave, app).id
+            idLog = dbInsert(postSave, app).id
         }
     
 }

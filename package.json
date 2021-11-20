@@ -1,6 +1,6 @@
 {
   "name": "loggering",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Registra tus logs de forma organizada",
   "main": "logger.js",
   "scripts": {
@@ -24,7 +24,6 @@
   "homepage": "https://github.com/gusgeek/Loggering#readme",
   "dependencies": {
     "fs": "0.0.1-security",
-    "luxon": "^2.0.2",
-    "solardb-core": "^3.1.1"
+    "luxon": "^2.0.2"
   }
 }
